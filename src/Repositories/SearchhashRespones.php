@@ -49,7 +49,7 @@ class SearchhashRespones
             return '请求异常';
         }
         if ($responseData['msg'] != 200) {
-            return '该种子暂无IYUU数据';
+            return $responseData['msg'] ?? '该种子暂无IYUU数据';
         }else{
             $data = $responseData['data'] ?? [];
             foreach ($data as $item) {
@@ -98,16 +98,16 @@ class SearchhashRespones
             'headers' => $this->headers,
             'form_params' => $hashArray,
         ]);
-         $responseData = json_decode((string)$response->getBody(), true);
-         if ($response->getStatusCode() != 200) {
-             \App\Models\StaffMessage::query()->insert([
-                 'sender' => 0,
-                 'subject' => 'IYUU_deletehash_error',
-                 'msg' => $responseData['msg'].$responseData['data'] ?? '未知错误',
-                 'added' => now(),
-                 'permission' => '',
-             ]);
-         }
+        $responseData = json_decode((string)$response->getBody(), true);
+        if ($response->getStatusCode() != 200) {
+            \App\Models\StaffMessage::query()->insert([
+                'sender' => 0,
+                'subject' => 'IYUU_deletehash_error',
+                'msg' => $responseData['msg'].$responseData['data'] ?? '未知错误',
+                'added' => now(),
+                'permission' => '',
+            ]);
+        }
         do_log("种子id：$torrent_id del成功",'error');
         return true;
         // }
