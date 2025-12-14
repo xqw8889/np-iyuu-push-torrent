@@ -58,15 +58,19 @@ php artisan plugin install xqw8889/np-iyuu-push-torrent
 
 ## 🚀 使用方法
 
-### 基础使用
-1. 在种子详情页面，查找 "推送至其他站点" 按钮
-2. 点击按钮显示可推送站点列表
-3. 选择目标站点进行推送
+### 📌 手动添加代码挂钩
+如果您希望在种子详情页显示推送按钮，请在 `public/details.php` 文件中找到：
 
-### 批量推送
-1. 在种子列表页面，选择多个种子
-2. 使用批量操作功能
-3. 选择 "批量推送" 选项
+```php
+tr($lang_details['row_basic_info'], $size_info.$type_info.$taxonomyRendered, 1);
+```
+
+在该行代码下面添加：
+
+```php
+//iyuu
+do_action('IyuuPushTorren_torrent', $id);
+```
 
 ## 🔧 技术特性
 
