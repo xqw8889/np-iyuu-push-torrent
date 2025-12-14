@@ -1,0 +1,30 @@
+{
+  "name": "xqw8889/np-iyuu-push-torrent",
+  "description": "NexusPHP plugin IyuuPushTorrent ",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "xqw8889",
+      "email": "xqw8889@qq.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "NexusPlugin\\IyuuPushTorrent\\": "src"
+    }
+  },
+  "scripts": {
+    "post-package-install": [
+      "@php artisan plugin install xqw8889/np-iyuu-push-torrent"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "NexusPlugin\\IyuuPushTorrent\\IyuuPushTorrentServiceProvider"
+      ]
+    }
+  }
+}
