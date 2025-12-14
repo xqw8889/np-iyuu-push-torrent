@@ -68,10 +68,10 @@ class IyuuPushTorrentRepository extends BasePlugin
                 ->id('IyuuPushTorren')
                 ->schema([
                     Forms\Components\Radio::make('IyuuPushTorren.enabled')->options(self::$yesOrNo)->required()->inline(true)->label(__('label.enabled')),
-                    Forms\Components\Radio::make('IyuuPushTorren.torrent_Deletehhash')->required()->options(self::$yesOrNo)->reactive()->inline(true)->label(__('IyuuPushTorren::IyuuPushTorren.torrent_Deletehhash')),
-                    Forms\Components\Radio::make('IyuuPushTorren.addhash')->required()->options(self::$yesOrNo)->reactive()->inline(true)->label(__('IyuuPushTorren::IyuuPushTorren.addhash')),
-                    Forms\Components\Radio::make('IyuuPushTorren.tagid_enabled')->required()->hidden(fn($get) => $get('IyuuPushTorren.addhash') != 'yes')->options(self::$yesOrNo)->reactive()->inline(true)->label(__('IyuuPushTorren::IyuuPushTorren.tagid_enabled')),
-                    Forms\Components\TextInput::make('IyuuPushTorren.tagid')->required()->hidden(fn($get) => $get('IyuuPushTorren.tagid_enabled') != 'yes')->required()->label(__('IyuuPushTorren::IyuuPushTorren.tagid'))->helperText(__('IyuuPushTorren::IyuuPushTorren.setting.tagid_help')),
+//                    Forms\Components\Radio::make('IyuuPushTorren.torrent_Deletehhash')->required()->options(self::$yesOrNo)->reactive()->inline(true)->label(__('IyuuPushTorren::IyuuPushTorren.torrent_Deletehhash')),
+//                    Forms\Components\Radio::make('IyuuPushTorren.addhash')->required()->options(self::$yesOrNo)->reactive()->inline(true)->label(__('IyuuPushTorren::IyuuPushTorren.addhash')),
+//                    Forms\Components\Radio::make('IyuuPushTorren.tagid_enabled')->required()->hidden(fn($get) => $get('IyuuPushTorren.addhash') != 'yes')->options(self::$yesOrNo)->reactive()->inline(true)->label(__('IyuuPushTorren::IyuuPushTorren.tagid_enabled')),
+//                    Forms\Components\TextInput::make('IyuuPushTorren.tagid')->required()->hidden(fn($get) => $get('IyuuPushTorren.tagid_enabled') != 'yes')->required()->label(__('IyuuPushTorren::IyuuPushTorren.tagid'))->helperText(__('IyuuPushTorren::IyuuPushTorren.setting.tagid_help')),
                     Forms\Components\TextInput::make('IyuuPushTorren.sign_key')->required()->label(__('IyuuPushTorren::IyuuPushTorren.sign_key')),
                     Forms\Components\TextInput::make('IyuuPushTorren.site_key')->required()->label(__('IyuuPushTorren::IyuuPushTorren.site_name')),
                 ])->columns(2);
