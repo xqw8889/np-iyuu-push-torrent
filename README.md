@@ -1,6 +1,6 @@
 # IYUU 种子推送插件(阉割版只具备查重功能)
 
-基于 IYUU API 开发的 NexusPHP 插件，用于查询其他站点相同的种子并实现一键推送功能。
+基于 IYUU API 开发的 [NexusPHP](https://github.com/xiaomlove/nexusphp) 插件，用于查询其他站点相同的种子并实现一键推送功能。
 
 ## ✨ 功能特性
 
