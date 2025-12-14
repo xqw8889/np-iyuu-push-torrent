@@ -2,22 +2,30 @@
 
 namespace NexusPlugin\IyuuPushTorrent;
 
-use Filament\PluginServiceProvider;
+use Filament\Panel;
 use NexusPlugin\IyuuPushTorrent\Commands\UpdateInfoHash;
 use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class IyuuPushTorrentServiceProvider extends PluginServiceProvider
+class IyuuPushTorrentServiceProvider extends PackageServiceProvider
 {
 
     public function configurePackage(Package $package): void
     {
         $package->name('IyuuPushTorren')
             ->hasTranslations()
-            ->hasViews()
         ;
     }
 
-    protected function registerMacros(): void
+    public function packageRegistered()
+    {
+        Panel::configureUsing(function (Panel $panel) {
+            $panel->plugin(IyuuPushTorrent::make());
+        });
+
+    }
+
+    public function packageBooted(): void
     {
         $rep = new IyuuPushTorrentRepository();
         if ($rep->getIsEnabled()) {
@@ -31,5 +39,4 @@ class IyuuPushTorrentServiceProvider extends PluginServiceProvider
 
         }
     }
-
 }
