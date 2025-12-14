@@ -59,7 +59,7 @@ php artisan plugin install xqw8889/np-iyuu-push-torrent
 ## 🚀 使用方法
 
 ### 📌 手动添加代码挂钩
-如果您希望在种子详情页显示推送按钮，请在 `public/details.php` 文件中找到：
+如果您希望在种子详情页显示其他站点查重信息，请在 `public/details.php` 文件中找到：
 
 ```php
 tr($lang_details['row_basic_info'], $size_info.$type_info.$taxonomyRendered, 1);
