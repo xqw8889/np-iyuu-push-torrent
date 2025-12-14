@@ -24,7 +24,7 @@ class SearchhashRespones
     {
         $this->signConfigKey = Setting::get('IyuuPushTorren.sign_key');
         $this->siteConfigKey = Setting::get('IyuuPushTorren.site_key');
-        $this->signConfigUrl = 'http://139.224.117.229:55542/api/';
+        $this->signConfigUrl = 'https://find.iyuu.cn/api/';
     }
     public function searchhash($hash): string
     {
