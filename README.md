@@ -21,7 +21,7 @@ php artisan plugin install xqw8889/np-iyuu-push-torrent
 
 #### 1.9.x 版本
 ```bash
-omposer config repositories.betting vcs git@github.com:xqw8889/np-iyuu-push-torrent.git
+composer config repositories.betting vcs git@github.com:xqw8889/np-iyuu-push-torrent.git
 composer require xqw8889/np-iyuu-push-torrent:1.9.x-dev
 php artisan plugin install xqw8889/np-iyuu-push-torrent
 ```
