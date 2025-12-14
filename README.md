@@ -26,11 +26,6 @@ composer require xqw8889/np-iyuu-push-torrent:1.9.x-dev
 php artisan plugin install xqw8889/np-iyuu-push-torrent
 ```
 
-### 方式二：通过 Artisan 安装
-```bash
-php artisan plugin install xqw8889/np-iyuu-push-torrent
-```
-
 ## ⚙️ 配置说明
 
 ### 1. 获取认证信息
