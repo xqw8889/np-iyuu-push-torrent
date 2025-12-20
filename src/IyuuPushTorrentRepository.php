@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Artisan;
 use Nexus\Nexus;
 use Nexus\Plugin\BasePlugin;
 use Filament\Forms;
+use Filament\Forms\Components\Tabs;
+use Filament\Forms\Components\Tabs\Tab;
 use Nexus\Database\NexusDB;
 use NexusPlugin\IyuuPushTorrent\Http\Controllers\IyuuPushTorrentController;
 use NexusPlugin\IyuuPushTorrent\Repositories\SearchhashRespones;
@@ -64,7 +66,7 @@ class IyuuPushTorrentRepository extends BasePlugin
     public function filterAddSettingTab(array $tabs): array
     {
         if (get_user_class() >= User::CLASS_SYSOP) {
-            $tabs[] = Forms\Components\Tabs\Tab::make(__('IyuuPushTorren::IyuuPushTorren.text_preservation'))
+            $tabs[] = Tab::make(__('IyuuPushTorren::IyuuPushTorren.text_preservation'))
                 ->id('IyuuPushTorren')
                 ->schema([
                     Forms\Components\Radio::make('IyuuPushTorren.enabled')->options(self::$yesOrNo)->required()->inline(true)->label(__('label.enabled')),
